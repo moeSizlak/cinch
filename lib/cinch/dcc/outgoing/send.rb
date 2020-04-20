@@ -104,16 +104,9 @@ module Cinch
           @io.advise(:sequential)
 
           while chunk = @io.read(8096)
-            while true
-              rs, ws = IO.select([fd], [fd])
-              if !rs.empty?
-                rs.first.recv(8096)
-              end
-              if !ws.empty?
-                ws.first.write(chunk)
-                break
-              end
-            end
+            rs, ws = IO.select([fd], [fd])
+            rs.first.recv(8096)   unless rs.empty?
+            ws.first.write(chunk) unless ws.empty?
           end
         end
       end

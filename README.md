@@ -1,11 +1,6 @@
 Cinch - The IRC Bot Building Framework
 =====================================
 
-**The Cinch project is no longer maintained. No new features will be
-added, and no bugs will be fixed. The repository has been archived. If
-you wish to continue developing Cinch, please fork the project. I am
-not accepting new maintainers for this project.**
-
 Description
 -----------
 
@@ -17,7 +12,7 @@ profits flourish.
 Cinch will do all of the hard work for you, so you can spend time creating cool
 plugins and extensions to wow your internet peers.
 
-For general support, join #cinch channel on Freenode server (irc://irc.freenode.org/cinch) – but
+For general support, join [#cinch](irc://irc.freenode.org/cinch) – but
 please don't bring any bots.
 
 Installation

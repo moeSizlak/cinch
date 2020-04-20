@@ -112,7 +112,7 @@ module Cinch
     # @return [void]
     # @since 2.0.0
     def send_cap_req
-      caps = [:"away-notify", :"multi-prefix", :sasl, :"twitch.tv/tags"] & @network.capabilities
+      caps = [:"away-notify", :"multi-prefix", :sasl] & @network.capabilities
 
       # InspIRCd doesn't respond to empty REQs, so send an END in that
       # case.
@@ -210,7 +210,7 @@ module Cinch
     def start
       setup
       if connect
-        @sasl_remaining_methods = @bot.config.sasl.mechanisms.reverse
+        @sasl_remaining_methods = [SASL::Plain, SASL::DH_Blowfish]
         send_cap_ls
         send_login
 
